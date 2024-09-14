@@ -9,7 +9,7 @@ const Contact = () => {
           <div>
             <div className="mr-10">
               <a
-                href="/index"
+                href="/main"
                 className="no-underline p-3 justify-between font-semibold font-title text-white text-[18px]"
               >
                 Home

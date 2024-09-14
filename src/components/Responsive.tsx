@@ -38,7 +38,7 @@ const Responsive = () => {
               <span className="pl-4 font-semibold font-title1">Home</span>
             </a>
             <a
-              href="/solarsystem"
+              href="/space"
               className="w-[80%] flex justify-center text-black no-underline rounded-full bg-[#a0934b] m-3 p-4 cursor-pointer hover:scale-110 ease-in duration-200"
             >
               <BsSun size={20} />
@@ -47,7 +47,7 @@ const Responsive = () => {
               </span>
             </a>
             <a
-              href="/info"
+              href="/news"
               className="w-[80%] flex justify-center text-black no-underline rounded-full bg-[#a0934b] m-3 p-4 cursor-pointer hover:scale-110 ease-in duration-200"
             >
               <AiOutlineBulb size={20} />
@@ -56,7 +56,7 @@ const Responsive = () => {
               </span>
             </a>
             <a
-              href="/mail"
+              href="/message"
               className="w-[80%] flex justify-center text-black no-underline rounded-full bg-[#a0934b] m-3 p-4 cursor-pointer hover:scale-110 ease-in duration-200"
             >
               <GrContact size={20} />
