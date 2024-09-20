@@ -1,5 +1,5 @@
 import Responsive from "./components/Responsive";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Solarsystem from "./pages/Solarsystem";
 import DYK from "./pages/DYK";
@@ -10,14 +10,16 @@ function App() {
   return (
     <div>
       <Responsive />
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="/main" element={<Home />} />
-        <Route path="/space" element={<Solarsystem />} />
-        <Route path="/news" element={<DYK />} />
-        <Route path="/message" element={<Contact />} />
-        <Route path="/planet" element={<Mercury />} />
-      </Routes>
+      <HashRouter>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/main" element={<Home />} />
+          <Route path="/space" element={<Solarsystem />} />
+          <Route path="/news" element={<DYK />} />
+          <Route path="/message" element={<Contact />} />
+          <Route path="/planet" element={<Mercury />} />
+        </Routes>
+      </HashRouter>
     </div>
   );
 }
