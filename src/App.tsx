@@ -8,7 +8,7 @@ import Mercury from "./pages/Mercury";
 
 function App() {
   return (
-    <>
+    <div>
       <Responsive />
       <Routes>
         <Route path="/main" element={<Home />} />
@@ -17,7 +17,7 @@ function App() {
         <Route path="/message" element={<Contact />} />
         <Route path="/planet" element={<Mercury />} />
       </Routes>
-    </>
+    </div>
   );
 }
 
