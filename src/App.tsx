@@ -11,9 +11,9 @@ function App() {
     <>
       <Responsive />
       <Routes>
-        <Route path="" element={<Home />} />
+        <Route path="/main" element={<Home />} />
         <Route path="" element={<Solarsystem />} />
-        <Route path="" element={<DYK />} />
+        <Route path="/news" element={<DYK />} />
         <Route path="" element={<Contact />} />
         <Route path="" element={<Mercury />} />
       </Routes>
