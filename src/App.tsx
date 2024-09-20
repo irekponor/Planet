@@ -11,11 +11,11 @@ function App() {
     <>
       <Responsive />
       <Routes>
-        <Route path="/main" element={<Home />} />
-        <Route path="/space" element={<Solarsystem />} />
-        <Route path="/news" element={<DYK />} />
-        <Route path="/message" element={<Contact />} />
-        <Route path="/planet" element={<Mercury />} />
+        <Route path="" element={<Home />} />
+        <Route path="" element={<Solarsystem />} />
+        <Route path="" element={<DYK />} />
+        <Route path="" element={<Contact />} />
+        <Route path="" element={<Mercury />} />
       </Routes>
     </>
   );
