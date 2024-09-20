@@ -1,14 +1,15 @@
+import React from "react";
 import Responsive from "./components/Responsive";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Solarsystem from "./pages/Solarsystem";
 import DYK from "./pages/DYK";
 import Contact from "./pages/Contact";
 import Mercury from "./pages/Mercury";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <>
+    <BrowserRouter>
       <Responsive />
       <Routes>
         <Route index element={<Home />} />
@@ -18,8 +19,8 @@ function App() {
         <Route path="/message" element={<Contact />} />
         <Route path="/planet" element={<Mercury />} />
       </Routes>
-    </>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
