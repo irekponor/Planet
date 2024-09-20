@@ -4,6 +4,39 @@ import home from "../assets/home.jpg";
 const Home = () => {
   return (
     <div>
+      <div className="md:block hidden">
+        <header className="fixed top-2 z-[20] mx-auto flex w-full items-center justify-between">
+          <h3 className="p-3 text-custom-color font-bold">Cosmiccraft</h3>
+          <div>
+            <div className="mr-10">
+              <a
+                href=""
+                className="no-underline p-3 justify-between font-semibold font-title text-custom-color text-[22px]"
+              >
+                Home
+              </a>
+              <a
+                href="/space"
+                className="no-underline p-3 justify-between font-semibold font-title text-white text-[18px]"
+              >
+                Solar System
+              </a>
+              <a
+                href="/news"
+                className="no-underline p-3 justify-between font-semibold font-title text-white text-[18px]"
+              >
+                Did you Know
+              </a>
+              <a
+                href="/message"
+                className="no-underline p-3 justify-between font-semibold font-title text-white text-[18px]"
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+        </header>
+      </div>
       <img src={home} className="object-cover h-screen w-full" alt="" />
       <div className="absolute top-0 w-full left-0">
         <div className="max-w-[550px] w-full h-full pl-14 m-auto justify-center items-center lg:items-start flex flex-col">
