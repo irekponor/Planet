@@ -12,10 +12,10 @@ function App() {
       <Responsive />
       <Routes>
         <Route path="/main" element={<Home />} />
-        <Route path="" element={<Solarsystem />} />
+        <Route path="/space" element={<Solarsystem />} />
         <Route path="/news" element={<DYK />} />
-        <Route path="" element={<Contact />} />
-        <Route path="" element={<Mercury />} />
+        <Route path="/message" element={<Contact />} />
+        <Route path="/planet" element={<Mercury />} />
       </Routes>
     </>
   );
