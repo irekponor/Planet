@@ -10,7 +10,6 @@ function App() {
   return (
     <div>
       <Responsive />
-
       <Routes>
         <Route path="/main" element={<Home />} />
         <Route path="/space" element={<Solarsystem />} />
