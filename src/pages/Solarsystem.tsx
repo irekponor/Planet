@@ -1,7 +1,6 @@
-import React from "react";
 import solar from "../assets/solar.jpg";
 
-const Solarsystem: React.FC = () => {
+const Solarsystem = () => {
   return (
     <div>
       <div className="md:block hidden">

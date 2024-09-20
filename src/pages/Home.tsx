@@ -1,8 +1,7 @@
-import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import home from "../assets/home.jpg";
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
     <div>
       <div className="md:block hidden">
