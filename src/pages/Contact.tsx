@@ -1,6 +1,7 @@
+import React from "react";
 import contact from "../assets/contact.jpg";
 
-const Contact = () => {
+const Contact: React.FC = () => {
   return (
     <div>
       <div className="md:block hidden">

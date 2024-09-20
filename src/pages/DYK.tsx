@@ -1,6 +1,7 @@
+import React from "react";
 import frontier from "../assets/frontier.jpg";
 
-const DYK = () => {
+const DYK: React.FC = () => {
   return (
     <div>
       <div className="md:block hidden">
