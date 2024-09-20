@@ -5,11 +5,13 @@ import Solarsystem from "./pages/Solarsystem";
 import DYK from "./pages/DYK";
 import Contact from "./pages/Contact";
 import Mercury from "./pages/Mercury";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div>
       <Responsive />
+      <Header />
       <Routes>
         <Route path="/main" element={<Home />} />
         <Route path="/space" element={<Solarsystem />} />
