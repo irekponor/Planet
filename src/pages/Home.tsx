@@ -52,7 +52,7 @@ const Home = () => {
                   1000, // wait 1s before replacing "Mice" with "Hamsters"
                   "The Unexplorable?",
                   1000,
-                  "The Mysterious",
+                  "The Mysterious?",
                   1000,
                 ]}
                 wrapper="span"
