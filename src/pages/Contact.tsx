@@ -1,7 +1,6 @@
-import React from "react";
 import contact from "../assets/contact.jpg";
 
-const Contact: React.FC = () => {
+const Contact = () => {
   return (
     <div>
       <div className="md:block hidden">
@@ -10,19 +9,19 @@ const Contact: React.FC = () => {
           <div>
             <div className="mr-10">
               <a
-                href="/main"
+                href="main"
                 className="no-underline p-3 justify-between font-semibold font-title text-white text-[18px]"
               >
                 Home
               </a>
               <a
-                href="/space"
+                href="space"
                 className="no-underline p-3 justify-between font-semibold font-title text-white text-[18px]"
               >
                 Solar System
               </a>
               <a
-                href="/news"
+                href="news"
                 className="no-underline p-3 justify-between font-semibold font-title text-white text-[18px]"
               >
                 Did you Know

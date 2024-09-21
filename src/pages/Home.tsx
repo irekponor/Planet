@@ -16,19 +16,19 @@ const Home = () => {
                 Home
               </a>
               <a
-                href="/space"
+                href="space"
                 className="no-underline p-3 justify-between font-semibold font-title text-white text-[18px]"
               >
                 Solar System
               </a>
               <a
-                href="/news"
+                href="news"
                 className="no-underline p-3 justify-between font-semibold font-title text-white text-[18px]"
               >
                 Did you Know
               </a>
               <a
-                href="/message"
+                href="message"
                 className="no-underline p-3 justify-between font-semibold font-title text-white text-[18px]"
               >
                 Contact

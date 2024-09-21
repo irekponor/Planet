@@ -9,15 +9,15 @@ import Mercury from "./pages/Mercury";
 function App() {
   return (
     <div>
-      <BrowserRouter basename="/planet/">
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Responsive />
         <Routes>
           <Route index element={<Home />} />
-          <Route path="/main" element={<Home />} />
-          <Route path="/space" element={<Solarsystem />} />
-          <Route path="/news" element={<DYK />} />
-          <Route path="/message" element={<Contact />} />
-          <Route path="/planet" element={<Mercury />} />
+          <Route path="main" element={<Home />} />
+          <Route path="space" element={<Solarsystem />} />
+          <Route path="news" element={<DYK />} />
+          <Route path="message" element={<Contact />} />
+          <Route path="planet" element={<Mercury />} />
         </Routes>
       </BrowserRouter>
     </div>

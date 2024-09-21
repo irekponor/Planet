@@ -7,7 +7,7 @@ const Mercuryheader = () => {
           <div>
             <div className="mr-10">
               <a
-                href="/main"
+                href="main"
                 className="no-underline p-3 justify-between font-semibold font-title text-white text-[18px]"
               >
                 Home
@@ -19,13 +19,13 @@ const Mercuryheader = () => {
                 Solar System
               </a>
               <a
-                href="/news"
+                href="news"
                 className="no-underline p-3 justify-between font-semibold font-title text-white text-[18px]"
               >
                 Did you Know
               </a>
               <a
-                href="/message"
+                href="message"
                 className="no-underline p-3 justify-between font-semibold font-title text-white text-[18px]"
               >
                 Contact

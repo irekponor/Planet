@@ -9,13 +9,13 @@ const DYK = () => {
           <div>
             <div className="mr-10">
               <a
-                href="/main"
+                href="main"
                 className="no-underline p-3 justify-between font-semibold font-title text-white text-[18px]"
               >
                 Home
               </a>
               <a
-                href="/space"
+                href="space"
                 className="no-underline p-3 justify-between font-semibold font-title text-white text-[18px]"
               >
                 Solar System
@@ -27,7 +27,7 @@ const DYK = () => {
                 Did you Know
               </a>
               <a
-                href="/message"
+                href="message"
                 className="no-underline p-3 justify-between font-semibold font-title text-white text-[18px]"
               >
                 Contact

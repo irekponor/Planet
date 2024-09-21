@@ -9,7 +9,7 @@ const Solarsystem = () => {
           <div>
             <div className="mr-10">
               <a
-                href="/main"
+                href="main"
                 className="no-underline p-3 justify-between font-semibold font-title text-white text-[18px]"
               >
                 Home
@@ -21,13 +21,13 @@ const Solarsystem = () => {
                 Solar System
               </a>
               <a
-                href="/news"
+                href="news"
                 className="no-underline p-3 justify-between font-semibold font-title text-white text-[18px]"
               >
                 Did you Know
               </a>
               <a
-                href="/message"
+                href="message"
                 className="no-underline p-3 justify-between font-semibold font-title text-white text-[18px]"
               >
                 Contact
@@ -62,7 +62,7 @@ const Solarsystem = () => {
           universe.
         </p>
         <p className="mt-14 md:pl-[580px] pl-36">
-          <a href="/planet">
+          <a href="planet">
             <button className="font-title1 bg-custom-color text-white p-4 rounded-xl text-[18px]">
               Explore!
             </button>
