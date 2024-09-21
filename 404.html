@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; URL='./index.html'" />
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=/Planet/">
     <script type="text/javascript">
-
+      // This script captures the current URL path and redirects it back to index.html
       var pathname = window.location.pathname;
-      var base = '/Planet'; 
-      var redirect = base + pathname;
-      window.location.replace(redirect);
+      var redirectUrl = "/Planet" + pathname.substring("/Planet".length);
+
+      if (redirectUrl !== "/Planet/") {
+        window.location.href = redirectUrl;
+      }
     </script>
+    <title>Redirecting...</title>
   </head>
-  <body></body>
+  <body>
+    Redirecting...
+  </body>
 </html>
+
