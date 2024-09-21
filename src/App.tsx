@@ -9,7 +9,7 @@ import Mercury from "./pages/Mercury";
 function App() {
   return (
     <div>
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <BrowserRouter basename="/planet/">
         <Responsive />
         <Routes>
           <Route index element={<Home />} />
