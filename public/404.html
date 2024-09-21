@@ -9,27 +9,24 @@
 
     (function() {
       var pathname = window.location.pathname;
-      console.log("Pathname:", pathname);
+      console.log("Current Pathname:", pathname);
 
       var basePath = "/Planet";
+      var validRoutes = ["/Planet/", "/Planet/main", "/Planet/space", "/Planet/news", "/Planet/message", "/Planet/planet"];
 
-      // If the pathname doesn't start with /Planet, redirect to /Planet with the correct path abeg
+      // Check if the current path starts with the basePath
       if (!pathname.startsWith(basePath)) {
-        console.log("Redirecting to", basePath + pathname);
+        // If the pathname doesn't start with /Planet, redirect to /Planet with the correct path
+        console.log("Redirecting to basePath with the correct pathname:", basePath + pathname);
         window.location.href = basePath + pathname;
+      } else if (!validRoutes.includes(pathname)) {
+        // If the pathname starts with /Planet but is invalid, show a 404 message
+        console.log("Invalid path after redirect, showing error message.");
+        document.body.innerHTML = "Page not found. Please check the URL.";
       } else {
-        // Define the valid routes that my app handles
-        var validRoutes = ["/Planet/", "/Planet/space", "/Planet/planet", "/Planet/main", "/Planet/news", "/Planet/message"];
-
-        // If the pathname is valid, stop further actions, let my React code handle it
-        if (validRoutes.includes(pathname)) {
-          console.log("Valid route, no need to redirect.");
-          // No redirection, React Router will handle it
-        } else {
-          // Show error message if the path is not valid
-          console.log("Page not found. Showing error message.");
-          document.body.innerHTML = "Page not found. Please check the URL.";
-        }
+        // If the route is valid, let React Router handle the navigation
+        console.log("Valid route detected. No redirection needed.");
+        // Do nothing; React Router will handle this path
       }
     })();
   </script>
