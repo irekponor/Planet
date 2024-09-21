@@ -5,21 +5,24 @@
   <meta charset="UTF-8">
   <title>Redirecting...</title>
   <script type="text/javascript">
-    // Get the current URL path
-    var pathname = window.location.pathname;
+    console.log("Redirect script executed");
     
-    // Check if the path starts with "/Planet"
-    if (!pathname.startsWith("/Planet")) {
-    
-      window.location.href = "/Planet" + pathname.replace(/^\//, '');
-    } else {
-      console.log("Already at the correct path:", pathname);
-    }
+    setTimeout(function() {
+      var pathname = window.location.pathname;
+      console.log("Pathname:", pathname);
+      
+      if (!pathname.startsWith("/Planet")) {
+        console.log("Redirecting to /Planet");
+        window.location.href = "/Planet" + pathname;
+      } else {
+        console.log("Already at /Planet");
+        document.body.innerHTML = "Page not found. Please check the URL.";
+      }
+    }, 1000); // 1-second delay
   </script>
 </head>
 <body>Redirecting...</body>
 </html>
-
 
 
 
