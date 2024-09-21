@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <title>Redirecting...</title>
     <script type="text/javascript">
-      // This script captures the current URL path and redirects it back to index.html
-      var pathname = window.location.pathname;
 
-      // Ensure the path starts with the /Planet base
+      var pathname = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+
+   
       if (!pathname.startsWith("/Planet")) {
-        window.location.href = "/Planet" + pathname;
+        window.location.href = "/Planet" + pathname + search + hash;
       } else {
-        window.location.href = "/Planet/";
+        window.location.href = "/Planet" + pathname.substring("/Planet".length) + search + hash;
       }
     </script>
   </head>
@@ -19,4 +21,5 @@
     Redirecting...
   </body>
 </html>
+
 
