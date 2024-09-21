@@ -13,6 +13,7 @@ function App() {
         <Responsive />
         <Routes>
           <Route index element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="main" element={<Home />} />
           <Route path="space" element={<Solarsystem />} />
           <Route path="news" element={<DYK />} />
