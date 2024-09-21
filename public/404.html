@@ -1,39 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting...</title>
-  <script type="text/javascript">
-    console.log("404 Redirect script executed");
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>React Router</title>
+    <script type="text/javascript">
+      var pathSegmentsToKeep = 1; 
 
-    (function() {
-      var pathname = window.location.pathname;
-      console.log("Current Pathname:", pathname);
+      (function() {
+        var l = window.location;
+        var basePath = "/Planet"; 
 
-      var basePath = "/Planet";
-      var validRoutes = ["/Planet/", "/Planet/main", "/Planet/space", "/Planet/news", "/Planet/message", "/Planet/planet"];
+        // Build the new URL
+        var newPath = l.protocol + "//" + l.hostname + (l.port ? ":" + l.port : "") +
+          basePath + 
+          l.pathname
+            .split("/")
+            .slice(1, 1 + pathSegmentsToKeep + 1) 
+            .join("/") +
+          "/?/" +
+          l.pathname.slice(1).split("/").slice(pathSegmentsToKeep).join("/").replace(/&/g, "~and~") +
+          (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+          l.hash;
 
-      // Check if the current path starts with the basePath
-      if (!pathname.startsWith(basePath)) {
-        // Redirect to /Planet with the current path if we're not in the correct base path
-        console.log("Redirecting to basePath with the correct pathname:", basePath + pathname);
-        window.location.href = basePath + pathname;
-      } else {
-        // If we're already at a valid React route, let React Router handle it
-        if (validRoutes.includes(pathname)) {
-          console.log("Valid route detected. No redirection needed.");
-          // No need to do anything here; React will take care of it
-        } else {
-          // If the path is not valid, show a 404 error
-          console.log("Invalid path after redirect, showing error message.");
-          document.body.innerHTML = "Page not found. Please check the URL.";
-        }
-      }
-    })();
-  </script>
-</head>
-<body>
-  Redirecting...
-</body>
+
+        l.replace(newPath);
+      })();
+    </script>
+  </head>
+  <body></body>
 </html>
