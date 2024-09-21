@@ -11,7 +11,7 @@ import Contact from "./pages/Contact";
 import Mercury from "./pages/Mercury";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <BrowserRouter basename="/planet/">
+  <BrowserRouter basename="/Planet/">
     <App />
     <Routes>
       <Route index element={<Home />} />
