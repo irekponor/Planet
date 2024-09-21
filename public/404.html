@@ -19,7 +19,7 @@
         window.location.href = basePath + pathname;
       } else {
 
-        var validRoutes = ["/Planet", "/Planet/", "/Planet/space", "/Planet/planet", "/Planet/main", "/Planet/news", "/Planet/message"];
+        var validRoutes = ["/Planet/", "/Planet/space", "/Planet/planet", "/Planet/main", "/Planet/news", "/Planet/message"];
         if (validRoutes.includes(pathname)) {
           console.log("Valid route, no need to redirect.");
           window.location.href = basePath;
