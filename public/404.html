@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>Redirecting...</title>
     <script type="text/javascript">
 
-      var pathname = window.location.pathname;
+        var pathname = window.location.pathname;
 
 
-      if (pathname.startsWith("/Planet")) {
+        if (!pathname.startsWith("/Planet")) {
 
-        console.log("Already at a valid path under /Planet");
-      } else {
+            window.location.href = "/Planet" + pathname;
+        } else {
 
-        window.location.replace("/Planet" + pathname);
-      }
+            console.log("Already at the correct path:", pathname);
+
+        }
     </script>
-  </head>
-  <body>
-    <noscript>You are being redirected...</noscript>
+</head>
+<body>
     Redirecting...
-  </body>
+</body>
 </html>
+
+
 
