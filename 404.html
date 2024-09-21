@@ -11,19 +11,22 @@
       var pathname = window.location.pathname;
       console.log("Pathname:", pathname);
 
-
       var basePath = "/Planet";
 
+      // If the pathname doesn't start with /Planet, redirect to /Planet with the correct path abeg
       if (!pathname.startsWith(basePath)) {
         console.log("Redirecting to", basePath + pathname);
         window.location.href = basePath + pathname;
       } else {
+        // Define the valid routes that my app handles
+        var validRoutes = ["/Planet/", "/Planet/space", "/Planet/planet", "/Planet/main", "/Planet/news", "/Planet/message"];
 
-        var validRoutes = ["/Planet", "/Planet/", "/Planet/space", "/Planet/planet", "/Planet/main", "/Planet/news", "/Planet/message"];
+        // If the pathname is valid, stop further actions, let my React code handle it
         if (validRoutes.includes(pathname)) {
           console.log("Valid route, no need to redirect.");
-          window.location.href = basePath;
+          // No redirection, React Router will handle it
         } else {
+          // Show error message if the path is not valid
           console.log("Page not found. Showing error message.");
           document.body.innerHTML = "Page not found. Please check the URL.";
         }
