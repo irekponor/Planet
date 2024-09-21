@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <title>Redirecting...</title>
     <script type="text/javascript">
-      
+      // Get current URL path, search query, and hash
       var pathname = window.location.pathname;
       var search = window.location.search;
       var hash = window.location.hash;
 
-      
+      // Redirect if the path doesn't start with "/Planet"
       if (!pathname.startsWith("/Planet")) {
+        // Use replace to avoid keeping the redirect page in history
         window.location.replace("/Planet" + pathname + search + hash);
+      } else {
+        // If already correct, just redirect to home
+        window.location.replace("/Planet/");
       }
     </script>
   </head>
@@ -20,7 +24,3 @@
     Redirecting...
   </body>
 </html>
-
-
-
-
