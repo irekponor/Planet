@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <title>Redirecting...</title>
     <script type="text/javascript">
-
+        // Get the current URL path
         var pathname = window.location.pathname;
 
-
+        // Check if the path starts with "/Planet"
         if (!pathname.startsWith("/Planet")) {
-
+            // Redirect to the correct path prefixed with "/Planet"
             window.location.href = "/Planet" + pathname;
         } else {
-
+            // Log that we are already at the correct path
             console.log("Already at the correct path:", pathname);
-
+            // Optionally show a message instead of redirecting
+            document.body.innerHTML = "Page not found. Please check the URL.";
         }
     </script>
 </head>
@@ -22,6 +23,7 @@
     Redirecting...
 </body>
 </html>
+
 
 
 
