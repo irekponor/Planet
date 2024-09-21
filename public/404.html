@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <title>Redirecting...</title>
     <script type="text/javascript">
-
+        
       var pathname = window.location.pathname;
       var search = window.location.search;
       var hash = window.location.hash;
 
-   
+
       if (!pathname.startsWith("/Planet")) {
+
         window.location.href = "/Planet" + pathname + search + hash;
       } else {
-        window.location.href = "/Planet" + pathname.substring("/Planet".length) + search + hash;
+        console.log("Already at the correct path, no redirection required.");
       }
     </script>
   </head>
@@ -21,5 +22,6 @@
     Redirecting...
   </body>
 </html>
+
 
 
