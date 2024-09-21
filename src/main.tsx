@@ -12,8 +12,9 @@ import Mercury from "./pages/Mercury";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <BrowserRouter basename="/planet/">
+    <App />
     <Routes>
-      <Route index element={<App />} />
+      <Route index element={<Home />} />
       <Route path="main" element={<Home />} />
       <Route path="space" element={<Solarsystem />} />
       <Route path="news" element={<DYK />} />
