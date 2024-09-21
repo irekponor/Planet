@@ -2,26 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Redirecting...</title>
   <script type="text/javascript">
-    console.log("Redirect script executed");
+    console.log("404 Redirect script executed");
 
-    setTimeout(function() {
+    (function() {
       var pathname = window.location.pathname;
       console.log("Pathname:", pathname);
 
-      var basePath = "/Planet";  
-      if (pathname === "/") {
-        console.log("Redirecting from the root to the base path");
-        window.location.href = basePath;
-      } else if (!pathname.startsWith(basePath)) {
-        console.log("Redirecting to the base path with pathname");
-        window.location.href = basePath + pathname; 
+      // Redirect back to the React app's base path and pass the current path
+      var basePath = "/Planet";
+      if (!pathname.startsWith(basePath)) {
+        window.location.href = basePath + pathname;
       } else {
-        console.log("Already at the correct path");
+        // Show error message if the path is not valid after redirection
         document.body.innerHTML = "Page not found. Please check the URL.";
       }
-    }, 1000); 
+    })();
   </script>
 </head>
 <body>
