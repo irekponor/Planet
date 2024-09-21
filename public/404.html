@@ -11,13 +11,22 @@
       var pathname = window.location.pathname;
       console.log("Pathname:", pathname);
 
-      // Redirect back to the React app's base path and pass the current path
+
       var basePath = "/Planet";
+
       if (!pathname.startsWith(basePath)) {
+        console.log("Redirecting to", basePath + pathname);
         window.location.href = basePath + pathname;
       } else {
-        // Show error message if the path is not valid after redirection
-        document.body.innerHTML = "Page not found. Please check the URL.";
+
+        var validRoutes = ["/Planet", "/Planet/", "/Planet/space", "/Planet/planet", "/Planet/main", "/Planet/news", "/Planet/message"];
+        if (validRoutes.includes(pathname)) {
+          console.log("Valid route, no need to redirect.");
+          window.location.href = basePath;
+        } else {
+          console.log("Page not found. Showing error message.");
+          document.body.innerHTML = "Page not found. Please check the URL.";
+        }
       }
     })();
   </script>
