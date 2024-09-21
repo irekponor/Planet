@@ -9,12 +9,11 @@ function App() {
   return (
     <div>
       <Responsive />
-      <Route index element={<Home />} />
-      <Route path="main" element={<Home />} />
-      <Route path="space" element={<Solarsystem />} />
-      <Route path="news" element={<DYK />} />
-      <Route path="message" element={<Contact />} />
-      <Route path="planet" element={<Mercury />} />
+      <Home />
+      <Solarsystem />
+      <DYK />
+      <Contact />
+      <Mercury />
     </div>
   );
 }
