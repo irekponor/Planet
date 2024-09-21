@@ -1,28 +1,30 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Redirecting...</title>
   <script type="text/javascript">
     console.log("Redirect script executed");
-    
+
     setTimeout(function() {
       var pathname = window.location.pathname;
       console.log("Pathname:", pathname);
-      
-      if (!pathname.startsWith("/Planet")) {
-        console.log("Redirecting to /Planet");
-        window.location.href = "/Planet" + pathname;
+
+      var basePath = "/Planet";  
+      if (pathname === "/") {
+        console.log("Redirecting from the root to the base path");
+        window.location.href = basePath;
+      } else if (!pathname.startsWith(basePath)) {
+        console.log("Redirecting to the base path with pathname");
+        window.location.href = basePath + pathname; 
       } else {
-        console.log("Already at /Planet");
+        console.log("Already at the correct path");
         document.body.innerHTML = "Page not found. Please check the URL.";
       }
-    }, 1000); // 1-second delay
+    }, 1000); 
   </script>
 </head>
-<body>Redirecting...</body>
+<body>
+  Redirecting...
+</body>
 </html>
-
-
-
