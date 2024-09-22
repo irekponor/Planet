@@ -1,32 +1,27 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>React Router</title>
-    <script type="text/javascript">
-      var pathSegmentsToKeep = 1;
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <script type="text/javascript">
+    (function () {
+      var currentPath = window.location.pathname;
+      var basePath = "/Planet";
+      var validRoutes = ["/Planet/", "/Planet/space", "/Planet/planet", "/Planet/main", "/Planet/news", "/Planet/message"];
 
-      (function() {
-        var l = window.location;
-        var basePath = "/Planet"; 
-
-    
-        var segments = l.pathname.split("/").filter(Boolean); 
-
-        // Build the new URL
-        var newPath = l.protocol + "//" + l.hostname + (l.port ? ":" + l.port : "") +
-          basePath + 
-          "/" + 
-          segments.slice(1, pathSegmentsToKeep + 1).join("/") + 
-          (l.search ? l.search.replace(/&/g, "~and~") : "") +
-          l.hash; 
-
-        // Only redirect if the newPath is different from the current path
-        if (newPath !== l.href) {
-          l.replace(newPath);
-        }
-      })();
-    </script>
-  </head>
-  <body></body>
+      if (!currentPath.startsWith(basePath)) {
+        // If the current path is outside the base path, redirect to the base path with the current pathname
+        window.location.href = basePath + currentPath;
+      } else if (!validRoutes.includes(currentPath)) {
+        // If the path starts with /Planet but isn't valid, redirect to the root of the React app (basePath)
+        window.location.href = basePath + "/";
+      } else {
+        // Otherwise, let React Router handle the route
+        document.body.innerHTML = "Redirecting to the correct path...";
+      }
+    })();
+  </script>
+</head>
+<body>Redirecting...</body>
 </html>
