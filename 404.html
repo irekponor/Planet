@@ -8,8 +8,9 @@
     (function () {
       var currentPath = window.location.pathname + window.location.search + window.location.hash;
       
-      // Ensure the current path starts with /Planet
+      // Check if the path already starts with /Planet and prevent duplication
       if (!currentPath.startsWith("/Planet")) {
+        // Only prepend /Planet if it is not already there
         currentPath = "/Planet" + currentPath;
       }
 
