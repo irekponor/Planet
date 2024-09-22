@@ -6,38 +6,13 @@
   <title>Page Not Found</title>
   <script type="text/javascript">
     (function () {
-      var currentPath = window.location.pathname + window.location.search + window.location.hash;
-      var basePath = "/Planet"; // Base path for your app
+      var basePath = "/Planet"; // Your base path
+      var currentPath = window.location.pathname;
 
-      console.log("Current Path:", currentPath);
-
-      // Check if the path already has the base path, if so, remove it
-      if (currentPath.startsWith(basePath)) {
-        currentPath = currentPath.replace(basePath, "");
-        console.log("Base path removed:", currentPath);
-      }
-
-      // Add the base path if it's missing
       if (!currentPath.startsWith(basePath)) {
-        currentPath = basePath + currentPath;
-        console.log("Base path added:", currentPath);
-      }
-
-      // Use a flag to prevent redirect loops
-      var redirectFlag = "redirect=true";
-      
-      // Check if the current URL already has the redirect flag
-      if (!window.location.search.includes(redirectFlag)) {
-        // Append the redirect flag and update the URL
-        var newPath = currentPath + (currentPath.includes('?') ? '&' : '?') + redirectFlag;
-        console.log("Redirecting to:", newPath);
-        window.location.replace(newPath); // Perform the redirect
+        window.location.replace(basePath + currentPath);
       } else {
-        // If the flag is present, clean the URL by removing the redirect flag
-        var cleanPath = currentPath.replace('?' + redirectFlag, '').replace('&' + redirectFlag, '');
-        console.log("Cleaning URL to:", cleanPath);
-        window.history.replaceState({}, "", cleanPath); // Update the URL without reloading the page
-        document.body.innerHTML = "<h1>Page Not Found</h1><p>The page you are looking for does not exist.</p>"; // Show the not found message
+        document.body.innerHTML = "<h1>404 - Page Not Found</h1><p>The page you are looking for does not exist. Please check the URL or return to the homepage.</p>";
       }
     })();
   </script>
