@@ -8,7 +8,7 @@
     (function () {
       var currentPath = window.location.pathname + window.location.search + window.location.hash;
       
-      // GitHub Pages base path is "/Planet", so if the current path already starts with "/Planet", don't add it again
+      // GitHub Pages base path is "/Planet", so if the current path already starts with "/Planet", don't add it again please
       if (currentPath.startsWith("/Planet")) {
         // Redirect to the correct path without any modification
         window.location.replace("/Planet/?redirect=" + encodeURIComponent(currentPath));
