@@ -7,29 +7,30 @@
   <script type="text/javascript">
     (function () {
       var currentPath = window.location.pathname + window.location.search + window.location.hash;
-      var basePath = "/Planet";
-      
-      // Remove existing base path if present
+      var basePath = "/Planet"; // Base path for your app
+
+      // Remove the existing base path if it's already included in the URL
       if (currentPath.startsWith(basePath)) {
         currentPath = currentPath.replace(basePath, "");
       }
-      
-      // Add base path if necessary
+
+      // Add the base path if it's missing
       if (!currentPath.startsWith(basePath)) {
         currentPath = basePath + currentPath;
       }
 
-      // Append the flag for redirection prevention
-      var redirectFlag = "?redirect=true";
+      // Use a flag to prevent redirect loops
+      var redirectFlag = "redirect=true";
       
-      // Prevent redirect loops by checking the flag
-      if (!currentPath.includes(redirectFlag)) {
-        var newPath = currentPath + (currentPath.includes('?') ? '&' : '?') + 'redirect=true';
-        window.location.replace(newPath);
+      // Check if the current URL already has the redirect flag
+      if (!window.location.search.includes(redirectFlag)) {
+        // Append the redirect flag and update the URL
+        var newPath = currentPath + (currentPath.includes('?') ? '&' : '?') + redirectFlag;
+        window.location.replace(newPath); // Perform the redirect
       } else {
-        // If redirected, clear the flag and update the URL
-        var cleanPath = currentPath.replace(redirectFlag, '');
-        window.history.replaceState({}, "", cleanPath);
+        // If the flag is present, clean the URL by removing the redirect flag
+        var cleanPath = currentPath.replace('?' + redirectFlag, '').replace('&' + redirectFlag, '');
+        window.history.replaceState({}, "", cleanPath); // Update the URL without reloading the page
       }
     })();
   </script>
