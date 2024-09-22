@@ -7,7 +7,7 @@ const Mercuryheader = () => {
           <div>
             <div className="mr-10">
               <a
-                href="main"
+                href="/"
                 className="no-underline p-3 justify-between font-semibold font-title text-white text-[18px]"
               >
                 Home
