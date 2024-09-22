@@ -9,21 +9,22 @@
       var currentPath = window.location.pathname + window.location.search + window.location.hash;
       var basePath = "/Planet";
       
-      // Remove existing base path
+      // Remove existing base path if present
       if (currentPath.startsWith(basePath)) {
         currentPath = currentPath.replace(basePath, "");
       }
       
-      // Add base path only if necessary
+      // Add base path if necessary
       if (!currentPath.startsWith(basePath)) {
         currentPath = basePath + currentPath;
       }
       
-      // Check if redirect is already handled
-      if (currentPath.includes("?redirect=")) {
-        window.history.replaceState({}, "", currentPath);
+      // Prevent redirect loops by appending a flag
+      if (!currentPath.includes("?redirect=true")) {
+        window.location.replace(currentPath + (currentPath.includes('?') ? '&' : '?') + 'redirect=true');
       } else {
-        window.location.replace(currentPath);
+        // If redirected, clear the query string from the URL
+        window.history.replaceState({}, "", currentPath.replace('?redirect=true', ''));
       }
     })();
   </script>
