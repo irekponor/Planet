@@ -14,12 +14,10 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check for redirect query parameters
     const params = new URLSearchParams(location.search);
     const redirectPath = params.get("redirect");
 
-    if (redirectPath) {
-      // Remove the redirect query parameter and navigate to the original path
+    if (redirectPath && location.pathname !== redirectPath) {
       navigate(redirectPath, { replace: true });
     }
   }, [location, navigate]);
