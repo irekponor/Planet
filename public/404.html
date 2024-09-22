@@ -6,8 +6,15 @@
   <title>Page Not Found</title>
   <script type="text/javascript">
     (function () {
-      // Redirect any path to the index.html for React Router to handle
-      window.location.replace("/Planet/");
+      var currentPath = window.location.pathname + window.location.search + window.location.hash;
+      
+      // Ensure the current path starts with /Planet
+      if (!currentPath.startsWith("/Planet")) {
+        currentPath = "/Planet" + currentPath;
+      }
+
+      // Redirect to the base path with the original path included as a query parameter
+      window.location.replace("/Planet/?redirect=" + encodeURIComponent(currentPath));
     })();
   </script>
 </head>
