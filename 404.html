@@ -8,17 +8,22 @@
     (function () {
       var currentPath = window.location.pathname;
       var basePath = "/Planet";
-      var validRoutes = ["/Planet/", "/Planet/space", "/Planet/planet", "/Planet/main", "/Planet/news", "/Planet/message"];
+      var validRoutes = ["/Planet/", "/Planet/space", "/Planet/planet", "/Planet/news", "/Planet/message"];
 
-      if (!currentPath.startsWith(basePath)) {
-        // If the current path is outside the base path, redirect to the base path with the current pathname
-        window.location.href = basePath + currentPath;
-      } else if (validRoutes.includes(currentPath)) {
-        // If the path is valid, let React Router handle it by doing nothing
-        console.log("Valid route detected. React Router will handle this.");
+      // Check if the current path starts with the base path
+      if (currentPath.startsWith(basePath)) {
+        // If it's a valid route, do nothing and let React Router handle it
+        if (validRoutes.includes(currentPath)) {
+          console.log("Valid route detected. React Router will handle this.");
+        } else {
+          // If the route isn't valid but starts with /Planet, show a 404 message
+          document.body.innerHTML = "Page not found. Please check the URL.";
+        }
       } else {
-        // If the path starts with /Planet but isn't valid, show a 404 message
-        document.body.innerHTML = "Page not found. Please check the URL.";
+        // If the current path is outside the base path, redirect to the base path + current path
+        var redirectTo = basePath + currentPath;
+        console.log("Redirecting to:", redirectTo);
+        window.location.href = redirectTo;
       }
     })();
   </script>
