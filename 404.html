@@ -8,14 +8,14 @@
     (function () {
       var currentPath = window.location.pathname + window.location.search + window.location.hash;
       
-      // Check if the path already starts with /Planet and prevent duplication
-      if (!currentPath.startsWith("/Planet")) {
-        // Only prepend /Planet if it is not already there
-        currentPath = "/Planet" + currentPath;
+      // GitHub Pages base path is "/Planet", so if the current path already starts with "/Planet", don't add it again please
+      if (currentPath.startsWith("/Planet")) {
+        // Redirect to the correct path without any modification
+        window.location.replace("/Planet/?redirect=" + encodeURIComponent(currentPath));
+      } else {
+        // If the current path does not start with /Planet, add it
+        window.location.replace("/Planet/?redirect=" + encodeURIComponent("/Planet" + currentPath));
       }
-
-      // Redirect to the base path with the original path included as a query parameter
-      window.location.replace("/Planet/?redirect=" + encodeURIComponent(currentPath));
     })();
   </script>
 </head>
