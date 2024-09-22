@@ -31,7 +31,7 @@ const Responsive = () => {
           />
           <div className="md:hidden fixed w-full h-screen bg-white flex flex-col justify-center items-center z-20">
             <a
-              href="main"
+              href="/"
               className="w-[80%] flex justify-center text-black no-underline rounded-full bg-[#a0934b] m-3 p-4 cursor-pointer hover:scale-110 ease-in duration-200"
             >
               <AiOutlineHome size={20} />
