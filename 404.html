@@ -13,12 +13,12 @@
       if (!currentPath.startsWith(basePath)) {
         // If the current path is outside the base path, redirect to the base path with the current pathname
         window.location.href = basePath + currentPath;
-      } else if (!validRoutes.includes(currentPath)) {
-        // If the path starts with /Planet but isn't valid, redirect to the root of the React app (basePath)
-        window.location.href = basePath + "/";
+      } else if (validRoutes.includes(currentPath)) {
+        // If the path is valid, let React Router handle it by doing nothing
+        console.log("Valid route detected. React Router will handle this.");
       } else {
-        // Otherwise, let React Router handle the route
-        document.body.innerHTML = "Redirecting to the correct path...";
+        // If the path starts with /Planet but isn't valid, show a 404 message
+        document.body.innerHTML = "Page not found. Please check the URL.";
       }
     })();
   </script>
