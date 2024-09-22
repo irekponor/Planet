@@ -4,20 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page Not Found</title>
-  <script type="text/javascript">
-    (function () {
-      var currentPath = window.location.pathname + window.location.search + window.location.hash;
-      
-      // GitHub Pages base path is "/Planet", so if the current path already starts with "/Planet", don't add it again please
-      if (currentPath.startsWith("/Planet")) {
-        // Redirect to the correct path without any modification
-        window.location.replace("/Planet/?redirect=" + encodeURIComponent(currentPath));
-      } else {
-        // If the current path does not start with /Planet, add it
-        window.location.replace("/Planet/?redirect=" + encodeURIComponent("/Planet" + currentPath));
-      }
-    })();
-  </script>
+ 
+<script type="text/javascript">
+  (function () {
+    var currentPath = window.location.pathname + window.location.search + window.location.hash;
+    var basePath = "/Planet";
+    
+    // Remove existing base path
+    if (currentPath.startsWith(basePath)) {
+      currentPath = currentPath.replace(basePath, "");
+    }
+    
+    // Add base path only if necessary
+    if (!currentPath.startsWith(basePath)) {
+      currentPath = basePath + currentPath;
+    }
+    
+    // Redirect to the correct path
+    window.location.replace(currentPath);
+  })();
+</script>
 </head>
 <body>Redirecting...</body>
 </html>
