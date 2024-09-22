@@ -1,23 +1,32 @@
-<script type="text/javascript">
-  (function () {
-    var currentPath = window.location.pathname + window.location.search + window.location.hash;
-    var basePath = "/Planet";
-    
-    // Remove existing base path
-    if (currentPath.startsWith(basePath)) {
-      currentPath = currentPath.replace(basePath, "");
-    }
-    
-    // Add base path only if necessary
-    if (!currentPath.startsWith(basePath)) {
-      currentPath = basePath + currentPath;
-    }
-    
-    // Check if redirect is already handled
-    if (currentPath.includes("?redirect=")) {
-      window.history.replaceState({}, "", currentPath);
-    } else {
-      window.location.replace(currentPath);
-    }
-  })();
-</script
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found</title>
+  <script type="text/javascript">
+    (function () {
+      var currentPath = window.location.pathname + window.location.search + window.location.hash;
+      var basePath = "/Planet";
+      
+      // Remove existing base path
+      if (currentPath.startsWith(basePath)) {
+        currentPath = currentPath.replace(basePath, "");
+      }
+      
+      // Add base path only if necessary
+      if (!currentPath.startsWith(basePath)) {
+        currentPath = basePath + currentPath;
+      }
+      
+      // Check if redirect is already handled
+      if (currentPath.includes("?redirect=")) {
+        window.history.replaceState({}, "", currentPath);
+      } else {
+        window.location.replace(currentPath);
+      }
+    })();
+  </script>
+</head>
+<body>Redirecting...</body>
+</html>
