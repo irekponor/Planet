@@ -18,13 +18,18 @@
       if (!currentPath.startsWith(basePath)) {
         currentPath = basePath + currentPath;
       }
+
+      // Append the flag for redirection prevention
+      var redirectFlag = "?redirect=true";
       
-      // Prevent redirect loops by appending a flag
-      if (!currentPath.includes("?redirect=true")) {
-        window.location.replace(currentPath + (currentPath.includes('?') ? '&' : '?') + 'redirect=true');
+      // Prevent redirect loops by checking the flag
+      if (!currentPath.includes(redirectFlag)) {
+        var newPath = currentPath + (currentPath.includes('?') ? '&' : '?') + 'redirect=true';
+        window.location.replace(newPath);
       } else {
-        // If redirected, clear the query string from the URL
-        window.history.replaceState({}, "", currentPath.replace('?redirect=true', ''));
+        // If redirected, clear the flag and update the URL
+        var cleanPath = currentPath.replace(redirectFlag, '');
+        window.history.replaceState({}, "", cleanPath);
       }
     })();
   </script>
